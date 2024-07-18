@@ -7,10 +7,12 @@ Code for paper "Dual-Stage Multi-Task Syntax-Oriented Pre-Training for Syntactic
 Install python3.8
 
 Install the following packages:
-    - torch==1.13.1
-    - transformers
-    - accelerate==0.24.0
-    - jsonargparse
+
+
+  - torch==1.13.1
+  - transformers
+  - accelerate==0.24.0
+  - jsonargparse
 
 ## DSMT Pre-training
 
