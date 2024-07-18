@@ -1,0 +1,34 @@
+dataset:
+  data_file_path: ../data/ParaNMT50m_original/random_trees_<node>_slash_multitask.h5
+  index_file_path: ../data/ParaNMT50m_original/random_trees_<node>_slash_multitask.h5 
+  max_length: 300
+  padding_strategy: longest
+  task_mask: [1, 0, 1, 1]
+  subset_divisor: 10
+  # task_mask: [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+use_cached_data: False
+force_recache: False
+val_data_dir: ../data/ParaNMT50m_original/val_data_slash_tree
+evaluator:
+  evalb_executable_path: ../evaluation/apps/EVALB/evalb
+  evalb_param_file_path: ../evaluation/apps/EVALB/sample/sample.prm
+  tree_format: slash
+seed: 114514
+model_name_or_path: ../pretrained-models/syntax-t5-base-node/
+tokenizer_name_or_path: ../pretrained-models/syntax-t5-base-node/
+batch_size: 32
+val_batch_size: 128
+num_epochs: 1
+num_workers: null
+prefetch_factor: 2
+lr: 5.0e-05
+gradient_accumulation_steps: 16
+num_warmup_steps: 1000
+output_dir: ./runs/tree_1_10_data_slash
+checkpoint_every: 512
+evaluate_every: 8192
+resume: false
+evaluation_only: false
+logging:
+  format: '%(asctime)s %(levelname)s %(filename)s:%(lineno)d -- %(message)s'
+  level: 20

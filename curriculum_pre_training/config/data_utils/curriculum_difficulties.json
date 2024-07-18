@@ -1,0 +1,17 @@
+{
+    "default": [
+        "low difficulty intra span",
+        "high difficulty intra span",
+        "low difficulty inter span",
+        "high difficulty inter span",
+        "pos tagging",
+        "tree pruning",
+        "production detection",
+        "constituency discrimination node",
+        "constituency searching node",
+        "pruned tree completion",
+        "pruned tree parse",
+        "scpg"
+    ]
+
+}

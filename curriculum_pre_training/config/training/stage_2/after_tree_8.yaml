@@ -1,0 +1,30 @@
+dataset:
+  data_file_path: ../data/ParaNMT50m_original/after_tree_train_data_multitask.h5
+  index_file_path: ../data/ParaNMT50m_original/after_tree_train_data_multitask_large_index_grouped_reshuffled_00.h5
+  max_length: 300
+  padding_strategy: longest
+use_cached_data: false
+force_recache: false
+val_data_dir: ../data/ParaNMT50m_original/val_data_1000
+evaluator:
+  evalb_executable_path: ../evaluation/apps/EVALB/evalb
+  evalb_param_file_path: ../evaluation/apps/EVALB/sample/sample.prm
+  tree_format: bracket
+seed: 113
+model_name_or_path: ../pretrained-models/syntax-t5-base-node-with-NT/
+tokenizer_name_or_path: ../pretrained-models/syntax-t5-base-node-with-NT/
+batch_size: 32
+val_batch_size: 64
+num_epochs: 1
+prefetch_factor: 2
+lr: 5.0e-05
+gradient_accumulation_steps: 16
+num_warmup_steps: 1000
+output_dir: ./runs/syntax_seed_test/0_8_data
+checkpoint_every: 1024
+evaluate_every: 16384
+resume: false
+evaluation_only: false
+logging:
+  format: '%(asctime)s %(levelname)s %(filename)s:%(lineno)d -- %(message)s'
+  level: 20
